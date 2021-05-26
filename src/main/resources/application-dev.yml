@@ -42,3 +42,6 @@ spring:
 logging:
   level:
     cc.mrbird.febs.common.handler: debug
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
