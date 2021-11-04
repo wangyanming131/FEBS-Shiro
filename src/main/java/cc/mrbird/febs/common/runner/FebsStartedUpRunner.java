@@ -36,7 +36,9 @@ public class FebsStartedUpRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         if (context.isActive()) {
             InetAddress address = InetAddress.getLocalHost();
-            String url = String.format("http://%s:%s", address.getHostAddress(), port);
+            String ut = address.getHostAddress();
+            ut = "127.0.0.1";
+            String url = String.format("http://%s:%s", ut, port);
             String loginUrl = febsProperties.getShiro().getLoginUrl();
             if (StringUtils.isNotBlank(contextPath)) {
                 url += contextPath;
